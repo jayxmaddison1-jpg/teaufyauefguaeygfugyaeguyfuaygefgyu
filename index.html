@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reapsed</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="bg-overlay"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <div class="container" id="bioContainer">
+    <div class="card">
+      <div class="card-blur"></div>
+      <div class="card-content">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring" id="avatarRing"></div>
+          <img class="avatar" id="avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="avatar">
+          <div class="status-dot" id="statusDot"></div>
+        </div>
+
+        <div class="username-section">
+          <h1 class="username" id="username">reapsed</h1>
+          <span class="badge" id="badge" style="display:none;"></span>
+        </div>
+
+        <p class="bio" id="bio">loading...</p>
+
+        <div class="music-player" id="musicPlayer" style="display:none;">
+          <div class="music-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="music-label">listening to spotify</span>
+          <div class="music-info">
+            <span class="music-title" id="musicTitle">Song Name</span>
+            <span class="music-artist" id="musicArtist">Artist</span>
+          </div>
+        </div>
+
+        <div class="links" id="links"></div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value" id="views">0</span>
+            <span class="stat-label">views</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
