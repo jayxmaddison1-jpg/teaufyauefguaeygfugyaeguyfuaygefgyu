@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dashboard — reapsed</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">r.</div>
+      <span class="sidebar-title">dashboard</span>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-btn active" data-section="profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </button>
+      <button class="nav-btn" data-section="appearance">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        Appearance
+      </button>
+      <button class="nav-btn" data-section="links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        Links
+      </button>
+      <button class="nav-btn" data-section="music">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        Music
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="/" class="view-page-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Page
+      </a>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="main-header">
+      <h1 id="sectionTitle">Profile</h1>
+      <div class="header-actions">
+        <button class="btn-ghost" id="resetBtn">Reset</button>
+        <button class="btn-primary" id="saveBtn">Save Changes</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Profile Section -->
+      <section class="section active" id="section-profile">
+        <div class="section-group">
+          <h3>Identity</h3>
+          <div class="field">
+            <label>Username</label>
+            <input type="text" id="inputUsername" placeholder="your name" maxlength="24">
+          </div>
+          <div class="field">
+            <label>Avatar URL</label>
+            <input type="url" id="inputAvatar" placeholder="https://...">
+            <div class="avatar-preview">
+              <img id="avatarPreview" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="preview">
+            </div>
+          </div>
+          <div class="field">
+            <label>Badge</label>
+            <input type="text" id="inputBadge" placeholder="e.g. OWNER, DEV, ADMIN" maxlength="12">
+            <span class="field-hint">Leave empty for no badge</span>
+          </div>
+        </div>
+
+        <div class="section-group">
+          <h3>Bio</h3>
+          <div class="field">
+            <label>Bio Text</label>
+            <textarea id="inputBio" placeholder="tell people about yourself..." maxlength="160" rows="3"></textarea>
+            <span class="field-hint"><span id="bioCount">0</span>/160</span>
+          </div>
+          <div class="field">
+            <label class="toggle-field">
+              <span>Status Dot</span>
+              <input type="checkbox" id="inputStatusDot" checked>
+              <span class="toggle"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appearance Section -->
+      <section class="section" id="section-appearance">
+        <div class="section-group">
+          <h3>Theme</h3>
+          <div class="field">
+            <label>Accent Color</label>
+            <div class="color-picker-row">
+              <input type="color" id="inputColor" value="#7c3aed">
+              <input type="text" id="inputColorHex" value="#7c3aed" maxlength="7" class="hex-input">
+            </div>
+            <div class="color-presets">
+              <button class="color-preset" data-color="#7c3aed" style="background:#7c3aed" title="Purple"></button>
+              <button class="color-preset" data-color="#ec4899" style="background:#ec4899" title="Pink"></button>
+              <button class="color-preset" data-color="#ef4444" style="background:#ef4444" title="Red"></button>
+              <button class="color-preset" data-color="#f97316" style="background:#f97316" title="Orange"></button>
+              <button class="color-preset" data-color="#eab308" style="background:#eab308" title="Yellow"></button>
+              <button class="color-preset" data-color="#22c55e" style="background:#22c55e" title="Green"></button>
+              <button class="color-preset" data-color="#06b6d4" style="background:#06b6d4" title="Cyan"></button>
+              <button class="color-preset" data-color="#3b82f6" style="background:#3b82f6" title="Blue"></button>
+              <button class="color-preset" data-color="#f43f5e" style="background:#f43f5e" title="Rose"></button>
+              <button class="color-preset" data-color="#ffffff" style="background:#ffffff" title="White"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-group">
+          <h3>Background</h3>
+          <div class="field">
+            <label>Background Style</label>
+            <div class="bg-options">
+              <button class="bg-option active" data-bg="particles">
+                <div class="bg-preview particles-preview"></div>
+                <span>Particles</span>
+              </button>
+              <button class="bg-option" data-bg="orbs">
+                <div class="bg-preview orbs-preview"></div>
+                <span>Orbs</span>
+              </button>
+              <button class="bg-option" data-bg="matrix">
+                <div class="bg-preview matrix-preview"></div>
+                <span>Matrix</span>
+              </button>
+              <button class="bg-option" data-bg="snow">
+                <div class="bg-preview snow-preview"></div>
+                <span>Snow</span>
+              </button>
+              <button class="bg-option" data-bg="stars">
+                <div class="bg-preview stars-preview"></div>
+                <span>Stars</span>
+              </button>
+              <button class="bg-option" data-bg="none">
+                <div class="bg-preview none-preview"></div>
+                <span>None</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Links Section -->
+      <section class="section" id="section-links">
+        <div class="section-group">
+          <div class="section-group-header">
+            <h3>Social Links</h3>
+            <button class="btn-small" id="addLinkBtn">+ Add Link</button>
+          </div>
+          <div class="links-list" id="linksList"></div>
+          <p class="empty-state" id="emptyLinks">No links added yet. Click "Add Link" to get started.</p>
+        </div>
+      </section>
+
+      <!-- Music Section -->
+      <section class="section" id="section-music">
+        <div class="section-group">
+          <h3>Music Player</h3>
+          <div class="field">
+            <label class="toggle-field">
+              <span>Enable Music Player</span>
+              <input type="checkbox" id="inputMusicEnabled">
+              <span class="toggle"></span>
+            </label>
+          </div>
+          <div class="field">
+            <label>Song Title</label>
+            <input type="text" id="inputMusicTitle" placeholder="Song Name" maxlength="50">
+          </div>
+          <div class="field">
+            <label>Artist</label>
+            <input type="text" id="inputMusicArtist" placeholder="Artist Name" maxlength="50">
+          </div>
+          <div class="field">
+            <label>Music URL (optional)</label>
+            <input type="url" id="inputMusicUrl" placeholder="https://open.spotify.com/...">
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast">Changes saved!</div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
