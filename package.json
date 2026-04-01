@@ -1,0 +1,13 @@
+{
+  "name": "reapsed-bio",
+  "version": "1.0.0",
+  "description": "Sleek bio page with customizable dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
